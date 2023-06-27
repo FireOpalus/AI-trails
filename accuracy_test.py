@@ -4,7 +4,7 @@ import numpy as np
 
 from albert_few_shot import max_length, albertBertClassifier, tokenizer, count_classes, device
 
-modelname = "/home/mihaii/Document/AI-trails/Code/huggingface-softmax.pt"
+modelname = "/mnt/d/University Study/大二1st/人工智能实验/Code/huggingface-softmax.pt"
 # modelname = "huggingface-softmax.pt"
 albertBertClassifier.load_state_dict(torch.load(modelname))
 
