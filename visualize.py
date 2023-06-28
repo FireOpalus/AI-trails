@@ -9,7 +9,7 @@ plt.ylabel("Accuracy")
 b_1, b_2, b_3, a_1, a_2, a_3 = [], [], [], [], [], []
 av_1, av_2, av_3 = [0, 0, 0], [0, 0, 0], [0, 0, 0]       #平均准确率
 num = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-batchs = [16, 32, 64]
+batches = [16, 32, 64]
 file = pd.read_csv("result.csv", header=0, encoding = "utf-8")
 raw = file.iloc[np.where(file["X-shot"].notnull())]
 for index,row in raw.iterrows():
@@ -69,14 +69,14 @@ plt.scatter(x = b_2, y = a_2, c = "red", s = 24, alpha = 0.4, label = "10-shot")
 plt.scatter(x = b_3, y = a_3, c = "green", s = 24, alpha = 0.4, label = "20-shot") #20-shot
 plt.legend() #显示标签
 
-plt.plot(batchs, av_1, c = "blue", linewidth = 1, alpha = 0.8, linestyle = '--')
-plt.plot(batchs, av_2, c = "red", linewidth = 1, alpha = 0.8, linestyle = '--')
-plt.plot(batchs, av_3, c = "green", linewidth = 1, alpha = 0.8, linestyle = '--')
+plt.plot(batches, av_1, c = "blue", linewidth = 1, alpha = 0.8, linestyle = '--')
+plt.plot(batches, av_2, c = "red", linewidth = 1, alpha = 0.8, linestyle = '--')
+plt.plot(batches, av_3, c = "green", linewidth = 1, alpha = 0.8, linestyle = '--')
 
 for i in range(3):
-    plt.text(x = batchs[i], y = av_1[i] + 0.001, s = str('%.4f' % av_1[i]), c = "blue")
-    plt.text(x = batchs[i], y = av_2[i] + 0.001, s = str('%.4f' % av_2[i]), c = "red")
-    plt.text(x = batchs[i], y = av_3[i] + 0.001, s = str('%.4f' % av_3[i]), c = "green")
+    plt.text(x = batches[i], y = av_1[i] + 0.001, s = str('%.4f' % av_1[i]), c = "blue")
+    plt.text(x = batches[i], y = av_2[i] + 0.001, s = str('%.4f' % av_2[i]), c = "red")
+    plt.text(x = batches[i], y = av_3[i] + 0.001, s = str('%.4f' % av_3[i]), c = "green")
     
 plt.title("ALBERT few-shot learning")
 plt.show()
